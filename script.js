@@ -1,4 +1,5 @@
-function iniciarJornada() {
+<script>
+    function iniciarJornada() {
       const nome = document.getElementById("nome").value;
       
       
@@ -26,3 +27,4 @@ function iniciarJornada() {
 
       document.getElementById("resultado").innerText = mensagem;
     }
+  </script>
