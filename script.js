@@ -1,38 +1,4 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <title>Batalha das 12 Casas</title>
-  <link rel="stylesheet" href="style.css">
-
-</head>
-<body>
-
-  <div class="container">
-    <h1>Batalha das 12 Casas</h1>
-
-    <div>
-      <input type="text" id="nome" placeholder="Digite seu nome">
-    </div>
-
-    <div>
-      <input type="number" id="cosmo" placeholder="Cosmo inicial">
-    </div>
-
-    <div>
-      <label>
-        <input type="checkbox" id="sacrificio">
-        Sacrificar sentidos (dobrar cosmo)
-      </label>
-    </div>
-
-    <button onclick="iniciarJornada()">Iniciar Jornada</button>
-
-    <div id="resultado"></div>
-  </div>
-
-  <script>
-    function iniciarJornada() {
+function iniciarJornada() {
       const nome = document.getElementById("nome").value;
       
       
@@ -60,8 +26,3 @@
 
       document.getElementById("resultado").innerText = mensagem;
     }
-  </script>
- <script src="script.js"></script>
-
-</body>
-</html>
