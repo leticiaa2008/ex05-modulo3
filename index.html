@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Batalha das 12 Casas</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+  <div class="container">
+    <h1>Batalha das 12 Casas</h1>
+
+    <div>
+      <input type="text" id="nome" placeholder="Digite seu nome">
+    </div>
+
+    <div>
+      <input type="number" id="cosmo" placeholder="Cosmo inicial">
+    </div>
+
+    <div>
+      <label>
+        <input type="checkbox" id="sacrificio">
+        Sacrificar sentidos (dobrar cosmo)
+      </label>
+    </div>
+
+    <button onclick="iniciarJornada()">Iniciar Jornada</button>
+
+    <div id="resultado"></div>
+  </div>
+
+  <script>
+    function iniciarJornada() {
+      const nome = document.getElementById("nome").value;
+      
+      
+      let cosmo = +document.getElementById("cosmo").value;
+
+      
+      const sacrificar = document.getElementById("sacrificio").checked;
+      cosmo = sacrificar ? cosmo * 2 : cosmo;
+
+      let casas = 12;
+      let danoPorCasa = 100;
+
+      
+      for (let i = 1; i <= casas; i++) {
+        cosmo = cosmo >= danoPorCasa ? cosmo - danoPorCasa : cosmo;
+      }
+
+    
+      let status = cosmo >= 1000 ? "Vivo" : "Derrotado";
+
+    
+      let mensagem = (cosmo >= 1000 && status === "Vivo")
+        ? `Parabéns, ${nome}! Você salvou Athena com ${cosmo} de cosmo restante!`
+        : `Que pena, ${nome}... você falhou. Cosmo final: ${cosmo}`;
+
+      document.getElementById("resultado").innerText = mensagem;
+    }
+  </script>
+ <script src="ex05.js"></script>
+
+</body>
+</html>
